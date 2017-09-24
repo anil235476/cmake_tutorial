@@ -1,0 +1,26 @@
+commenting:-
+   line starting with # is commenting
+
+cmake version mentioning:-
+	cmake_minimum_required (VERSION numberhere)
+project name 
+		project(project_name)
+defining type of application
+		as exe:-
+			add_executable(name list of files here)
+		as library:-
+		    static library(default setting is STATIC)
+			add_library(name STATIC "list of files here")
+			dynamic library
+			add_library(name SHARED "list of files here")
+		
+Adding compile time Flag:-
+		//let us say we want add compile time flag with name TEST 
+		add_definitions(-DTEST)
+
+
+		
+			
+References:-
+	https://cmake.org/cmake/help/v3.0/
+	
