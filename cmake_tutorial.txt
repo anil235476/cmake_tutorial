@@ -18,8 +18,22 @@ Adding compile time Flag:-
 		//let us say we want add compile time flag with name TEST 
 		add_definitions(-DTEST)
 
+linking one exe to library:-
+        //test -> exe name 
+		//testlib --> library name
+		target_link_libraries(test testlib)
 
-		
+setting normal variable, enviornment varible, or cache variable:-
+		set(<variable> <value>... [PARENT_SCOPE])
+		//what is the use of set(...)
+		a. setting list of files to variable.
+How to access variable value:-
+		${variable_name}
+adding standard library say windows specific:-
+         //here we try to add d3d11.lib file
+		target_link_libraries(directX_renderer d3d11)
+		//note: it is case sensitive, if D3D11 is given then there would be compilation error
+
 			
 References:-
 	https://cmake.org/cmake/help/v3.0/
