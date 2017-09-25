@@ -27,14 +27,41 @@ setting normal variable, enviornment varible, or cache variable:-
 		set(<variable> <value>... [PARENT_SCOPE])
 		//what is the use of set(...)
 		a. setting list of files to variable.
+		
 How to access variable value:-
 		${variable_name}
+		
 adding standard library say windows specific:-
          //here we try to add d3d11.lib file
 		target_link_libraries(directX_renderer d3d11)
 		//note: it is case sensitive, if D3D11 is given then there would be compilation error
-
-			
+		
+directory path of project:-
+         ${CMAKE_HOME_DIRECTORY} -- > identifies the project directory path
+		 
+deciding binary exe and obj file directory:-
+          CMAKE_RUNTIME_OUTPUT_DIRECTORY this flag represents directory.
+		  whatever path we want to give to output directory, this variable value hs to be set.
+		  for example
+		  set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_HOME_DIRECTORY}/bin/)
+		  
+deciding library out put directory:-
+        CMAKE_LIBRARY_OUTPUT_DIRECTORY represents library output directory.
+		whatever output directory is required, set this variable as desired value of directory.
+		for example:-
+		set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_HOME_DIRECTORY}/bin/)
+		
+adding subdirectory in the build:-
+		add_subdirectory((source_dir)
+		Add a subdirectory to the build. 
+		The source_dir specifies the directory in which the source CMakeLists.txt and code files are located.
+		
+how to specify target platform:-(x86 or x64)
+			by default cmake generate build for x86.
+			however for other than x86,this has to be put into command line argument when cmake is run
+			for example:-
+			cmake .\ -G "Visual Studio 14 2015 Win64"
+			explanation:- in this case build is generated for Visual Studio 14 2015 with x64 archietuecture support.
 References:-
 	https://cmake.org/cmake/help/v3.0/
 	
