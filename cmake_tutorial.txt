@@ -86,4 +86,9 @@ adding testing framework:-
 			
 			References:-
 	https://cmake.org/cmake/help/v3.0/
-	
+
+Building
+	CMake supports out-of-source builds?—?so all our compiled code goes into a directory separate to the sources.
+	mkdir _build
+	cd _build
+	cmake ..
