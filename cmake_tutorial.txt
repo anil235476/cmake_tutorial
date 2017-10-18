@@ -92,3 +92,18 @@ Building
 	mkdir _build
 	cd _build
 	cmake ..
+	
+List of cmake global variables:-
+	(a) CMAKE_BINARY_DIR
+			if you are building in-source, this is the same as CMAKE_SOURCE_DIR, otherwise this is the top level directory of your build tree
+	(b) CMAKE_SOURCE_DIR
+			this is the directory, from which cmake was started, i.e. the top level source directory
+	(c) EXECUTABLE_OUTPUT_PATH
+			set this variable to specify a common place where CMake should put all executable files (instead of CMAKE_CURRENT_BINARY_DIR)
+	(d) LIBRARY_OUTPUT_PATH
+			set this variable to specify a common place where CMake should put all libraries (instead of CMAKE_CURRENT_BINARY_DIR)
+	(e) PROJECT_NAME
+			the name of the project set by PROJECT() command.
+	(f) PROJECT_SOURCE_DIR
+			ontains the full path to the root of your project source directory, i.e. to the nearest directory where CMakeLists.txt contains the PROJECT() command.
+			
