@@ -20,5 +20,6 @@ option (USE_MY_FLAG
 
 # add the executable
 add_executable(Tutorial tutorial.cxx)
+add_definitions(-DUSE_MY_FLAG)
 
-set_target_properties(Tutorial PROPERTIES COMPILE_FLAGS "-DUSE_MY_FLAG")
+#set_target_properties(Tutorial PROPERTIES COMPILE_FLAGS "-DUSE_MY_FLAG")
