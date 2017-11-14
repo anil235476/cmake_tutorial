@@ -107,3 +107,10 @@ List of cmake global variables:-
 	(f) PROJECT_SOURCE_DIR
 			ontains the full path to the root of your project source directory, i.e. to the nearest directory where CMakeLists.txt contains the PROJECT() command.
 			
+how to add include directory path	
+	include_directories(path_to_include)
+	
+how to include library path:-
+	LINK_DIRECTORIES(path_to_include)
+
+			
