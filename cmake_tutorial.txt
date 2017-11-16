@@ -46,10 +46,21 @@ deciding binary exe and obj file directory:-
 		  set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_HOME_DIRECTORY}/bin/)
 		  
 deciding library out put directory:-
+	For shared library:-
         CMAKE_LIBRARY_OUTPUT_DIRECTORY represents library output directory.
 		whatever output directory is required, set this variable as desired value of directory.
 		for example:-
-		set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_HOME_DIRECTORY}/bin/)
+		set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_HOME_DIRECTORY}/bin/) 
+		can be done as 
+		set_target_properties(bit_blt_capturer PROPERTIES
+         LIBRARY_OUTPUT_DIRECTORY  ${CMAKE_HOME_DIRECTORY}/bin/
+		 )
+		 
+	for static librarie
+		set_target_properties(bit_blt_capturer PROPERTIES
+         ARCHIVE_OUTPUT_DIRECTORY  ${CMAKE_HOME_DIRECTORY}/bin/
+		 )
+		
 		
 adding subdirectory in the build:-
 		add_subdirectory((source_dir)
