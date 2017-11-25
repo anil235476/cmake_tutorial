@@ -83,17 +83,45 @@ how to make conditional inclusion(selection) in cmake run enviornment:-
 			during running cmake from command line 
 			cmake -Dvariable_name=ON[or OFF]
 			
-adding testing framework:-
-			ctest is provided by cmake, ctest can run gtest.
-			how to use:-
-				it is being on by using two apis:
-				 enable_testing() and 
-				 add_test()
-		    How to run
-				go to subdiretory of runsystem
-				and 
-				run ctest
+adding testing framework along with gtest:-
+			--> download googletest source code as one of the subdirectory
+			--> decide a flag which will build unit test frame work let say it "test"
+			-->
+			   in main CMakeList.txt file 
+			   add google framework subdirectory 
+			     ####################################
+				#GTest
+					#####################################
+				if(test)
+				add_subdirectory(gTest)
+				endif(test)
 				
+			---> in test subdirectory 
+			     in test's main cmakeLists.txt file
+				 
+				 if(test)
+					enable_testing()
+					include_directories(
+						${gtest_SOURCE_DIR}/include 
+						${gtest_SOURCE_DIR}
+					)
+					
+				add_executable(run_unit_test
+							test_gtest.cxx)
+				target_link_libraries(run_unit_test
+							gtest gtest_main
+				)
+				target_link_libraries(run_unit_test
+					app_lib
+					)
+			add_test(our_test run_unit_test)
+			
+		>> how to run test:-
+		   go to build subdirectroy of test and in 
+		     command line run ctest 
+			   this will run all the test defined for our_test above
+				 
+		
 			
 			References:-
 	https://cmake.org/cmake/help/v3.0/
@@ -123,5 +151,13 @@ how to add include directory path
 	
 how to include library path:-
 	LINK_DIRECTORIES(path_to_include)
+	
+Using Differnt Generator
+    If we want to use a differnt generator, we pass it to cmake using the -G parameter:-
+	example :- cmake -G Xcode
+
+make depend a project  
+	add_dependencies()
+	  
 
 			
