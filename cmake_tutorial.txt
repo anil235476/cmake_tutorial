@@ -159,5 +159,6 @@ Using Differnt Generator
 make depend a project  
 	add_dependencies()
 	  
-
-			
+setting required C++ version support
+       target_compile_features(exe_name PRIVATE cxx_std_17)
+			https://cmake.org/cmake/help/latest/manual/cmake-compile-features.7.html#requiring-language-standards
